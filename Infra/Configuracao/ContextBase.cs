@@ -43,7 +43,7 @@ namespace Infra.Configuracao
 
         public string ObterStringConexao()
         {
-            return "Data Source=DESKTOP-RVNT0A3;Initial Catalog=FINANCEIRO_2023;Integrated Security=True";
+            return "Data Source=DESKTOP-RVNT0A3\\SQLEXPRESS;Initial Catalog=FINANCEIRO_2023;Integrated Security=True;TrustServerCertificate=True";
         }
     }
 }
