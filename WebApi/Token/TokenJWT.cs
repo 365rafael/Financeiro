@@ -8,7 +8,7 @@ namespace WebApi.Token
 
         internal TokenJWT(JwtSecurityToken token)
         {
-            this.token = token;        
+            this.token = token;
         }
 
         public DateTime ValidTo => token.ValidTo;

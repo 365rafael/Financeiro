@@ -12,10 +12,12 @@ namespace WebApi.Controllers
     [ApiController]
     public class TokenController : ControllerBase
     {
+
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
 
-        public TokenController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager)
+        public TokenController(UserManager<ApplicationUser> userManager,
+            SignInManager<ApplicationUser> signInManager)
         {
             _userManager = userManager;
             _signInManager = signInManager;
@@ -35,7 +37,7 @@ namespace WebApi.Controllers
             if (result.Succeeded)
             {
                 var token = new TokenJWTBuilder()
-                    .AddSecurityKey(JwtSecurityKey.Create("SuperSegura_12345678901234567890!@#"))
+                     .AddSecurityKey(JwtSecurityKey.Create("SuperSegura_12345678901234567890!@#")) // agora é exigido chave longa
                  .AddSubject("Canal Dev Net Core")
                  .AddIssuer("Teste.Securiry.Bearer")
                  .AddAudience("Teste.Securiry.Bearer")
